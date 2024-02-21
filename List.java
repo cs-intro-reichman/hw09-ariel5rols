@@ -50,7 +50,7 @@ public class List {
     public int indexOf(char chr) {
         Node current = first;
         for (int i = 0; current != null; i++) {
-            if (current.cp.chr = chr) {return i;}
+            if (current.cp.chr == chr) {return i;}
             current = current.next;
         }
     }
