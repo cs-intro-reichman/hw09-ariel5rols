@@ -30,6 +30,7 @@ public class List {
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
         // Your code goes here
+        size++;
     }
     
     /** GIVE Textual representation of this list. */
@@ -41,7 +42,11 @@ public class List {
      *  that has the same chr value as the given char,
      *  or -1 if there is no such object in this list. */
     public int indexOf(char chr) {
-        // Your code goes here
+        Node current = first;
+        for (int i = 0; i < this.Node.length; i++) {
+            if (current.cp.chr = chr) {return i;}
+            current = current.next;
+        }
     }
 
     /** If the given character exists in one of the CharData objects in this list,
