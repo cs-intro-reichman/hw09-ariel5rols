@@ -76,7 +76,7 @@ public class List {
     public boolean remove(char chr) {
         Node current = first;
         for (int i = 0; current.next != null; i++) {
-            if (current.next.cp.chr = chr) {
+            if (current.next.cp.chr == chr) {
                 if (current.next.next != null) {current.next = current.next.next;}
                 else {current.next = null;}
                 return true;
