@@ -45,7 +45,7 @@ public class LanguageModel {
                     value.addFirst(fileString.charAt(i + windowLength));
                 }
             } else {
-                CharDataMap.put(key, new List<Character>());
+                CharDataMap.put(key, new List());
                 CharDataMap.get(key).addFirst(fileString.charAt(i + windowLength));
             }
             calculateProbabilities(CharDataMap.get(key));
