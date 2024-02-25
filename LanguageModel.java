@@ -37,7 +37,7 @@ public class LanguageModel {
         String fileString = input.readAll();
         for (int i = 0; i + windowLength < fileString.length(); i++) {
             String key = fileString.substring(i, i + windowLength);
-            List<Character> value = CharDataMap.get(key);
+            List value = CharDataMap.get(key);
             if (value != null) {
                 if (value.contains(fileString.charAt(i + windowLength))) {
                     value.update(fileString.charAt(i + windowLength));
