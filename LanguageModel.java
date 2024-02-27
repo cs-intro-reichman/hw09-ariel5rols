@@ -86,7 +86,6 @@ public class LanguageModel {
 	 * @return the generated text
 	 */
 	public String generate(String initialText, int textLength) {
-        
         if (initialText.length() >= windowLength) {
             for (int i = 0; i < textLength; i++) {
                 initialText += getRandomChar(

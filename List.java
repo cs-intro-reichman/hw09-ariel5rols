@@ -76,12 +76,15 @@ public class List {
      *  true. Otherwise, returns false. */
     public boolean remove(char chr) {
         Node current = first;
-        for (int i = 0; current.next != null; i++) {
-            if (current.next.cp.chr == chr) {
-                if (current.next.next != null) {current.next = current.next.next;}
-                else {current.next = null;}
+        Node before = current;
+        while (current != null) {
+            if (current.cp.chr == chr) {
+                before.next = current.next;
+                current = null;
                 return true;
             }
+            before = current;
+            current = current.next;
         }
         return false;
     }
@@ -91,11 +94,10 @@ public class List {
      *  throws an IndexOutOfBoundsException. */
     public CharData get(int index) {
         Node current = first;
-        for (int i = 0; current != null; i++) {
-            if (i == index) {return current.cp;}
-            current = current.next;
-        }
-        throw new IndexOutOfBoundsException();
+        if (index < size && index >= 0 ) {
+            for (int i = 0; i < index; i++) {current = current.next;}
+            return current.cp;
+        } else {throw new IndexOutOfBoundsException();}
     }
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
