@@ -33,14 +33,16 @@ public class LanguageModel {
  
     /** Builds a language model from the text in the given file (the corpus). */
 	public void train(String fileName) {
+        String fileString = "";
         In input = new In(fileName);
-        String fileString = input.readAll();
+        fileString = input.readAll();
         for (int i = 0; i + windowLength < fileString.length(); i++) {
             String key = fileString.substring(i, i + windowLength);
             List value = CharDataMap.get(key);
             if (value != null) {
-                if (value.contains(fileString.charAt(i + windowLength))) {
+                if (value.indexOf(fileString.charAt(i + windowLength)) != -1) {
                     value.update(fileString.charAt(i + windowLength));
+
                 } else {
                     value.addFirst(fileString.charAt(i + windowLength));
                 }
