@@ -53,6 +53,7 @@ public class List {
             if (current.cp.chr == chr) {return i;}
             current = current.next;
         }
+        return -1;
     }
 
     /** If the given character exists in one of the CharData objects in this list,

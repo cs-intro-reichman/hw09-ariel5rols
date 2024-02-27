@@ -29,8 +29,8 @@ public class LanguageModel {
         this.windowLength = windowLength;
         randomGenerator = new Random();
         CharDataMap = new HashMap<String, List>();
-    }
-
+    } 
+ 
     /** Builds a language model from the text in the given file (the corpus). */
 	public void train(String fileName) {
         In input = new In(fileName);
