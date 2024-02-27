@@ -61,7 +61,7 @@ public class List {
      *  given chr to the beginning of this list. */
     public void update(char chr) {
         Node current = first;
-        for (int i = 0; current.next != null; i++) {
+        while (current !=  null) {
             if (current.cp.chr == chr) {
                 current.cp.count++;
                 return;
